@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  .w3-card-4
+    .w3-content(id="home")
+    .w3-container.w3-blue.w3-grayscale
+      h1.w3-center.w3-jumbo Recipe Finder
+      form.w3-container(action="/" method="POST")
+        input(type="text" placeholder="Nome de ingrediente" name="name" style="margin-bottom:10px" id="searchbar")
+        button.w3-button.w3-grey(type="submit" style="height:35px;width: 35px" id="searchbutton")  
+    if(food==null)
+      img(src="/images/img_restaurant1.jpg" style="margin-left:0px;width:2000px;height:1100px")
+    else
+      .w3-container(id="back")
+        each f in food
+          .w3-card-4(style="background-color:white;margin-left:300px;margin-right:300px;opacity: 70%;")
+            p
+              b=f.name
+            p
+              b TAGS
+            ul
+              each tag in f.tags
+                li
+                  a(href="/recipes/"+tag) #{tag}
+            p
+              b STEPS
+            ul
+              each step in f.steps
+                li=step
+            b Description: 
+            p= f.description
+            img(src=f.image style="margin-left:30px;height: 370px;width: 640px;")
+            .w3-container
+              table.w3-table-all
+                tr
+                  th caloriesKCal
+                  th caloriesKJ
+                  th totalCarbs
+                  th protein
+                  th netCarbs
+                  th alcohol
+                tr
+                  td= f.nutrients.caloriesKCal
+                  td= f.nutrients.caloriesKJ
+                  td= f.nutrients.totalCarbs
+                  td= f.nutrients.protein
+                  td= f.nutrients.netCarbs
+                  td= f.nutrients.alcohol
+
+  footer.w3-center.w3-blue.w3-grayscale(style="height: 100px;margin-top:0px; width:100%;")
+    p ©2023 All Rights Reserved
+    p #{date}

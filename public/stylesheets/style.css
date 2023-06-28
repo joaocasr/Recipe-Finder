@@ -1,0 +1,17 @@
+h1 {font-family: "Amatic SC", sans-serif}
+
+#searchbar {
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+#searchbutton{
+  background-image: url("../images/search.png");
+  background-size:contain;
+}
+
+#back{
+  background-color: rgb(67, 83, 104);
+  background-size:contain;
+}

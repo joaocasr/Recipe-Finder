@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .w3-card-4
+    .w3-content(id="home")
+    .w3-container.w3-blue.w3-grayscale
+      h1.w3-center.w3-jumbo Recipe Finder
+      .w3-container(id="back")
+        p Não foi possivel obter pratos relacionados com a pesquisa efetuada.
+        h1= message
+  footer.w3-center.w3-blue.w3-grayscale(style="height: 100px;margin-top:0px; width:100%;")
+    p ©2023 All Rights Reserved
+    p 
+      a(href="/") [Voltar à main page] 
